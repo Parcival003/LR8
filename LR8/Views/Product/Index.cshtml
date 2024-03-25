@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LR8.Models.Product>
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<h2>Product List</h2>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.ID. @product.Name - @product.Price$ (@product.CreatedDate)</li>
+    }
+</ul>
+
+<h2>Product Table</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.CreatedDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
